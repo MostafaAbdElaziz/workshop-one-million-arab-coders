@@ -1,13 +1,16 @@
-balance = 500
+balance1 = 500
+balance2 = 1000
 request = 277
+atm1 = ATM(balance1, "Smart Bank")
+atm2 = ATM(balance2, "Baraka Bank")
 
+class atm:
+ def __init__(self, balance, bank_name):
+        self.balance = balance
+        self.bank_name = bank_name
 
-def withdraw (balance,request):
     print "current balance 500 "
-    balance = withdraw(balance, 277)
-    balance = withdraw(balance, 30)
-    balance = withdraw(balance, 5)
-    balance = withdraw(balance, 500)
+
     if request > balance:
        print("Can't give you all this money !!")
 
@@ -34,10 +37,12 @@ def withdraw (balance,request):
                 print("give 5")
 
             elif request < 5:
-                print("give " + str(request))
+                print("give " + str(self.balance))
                 request = 0
 
-            return balance - request
+        return balance - request
 print "current balance", balance - request
-
-
+balance = withdraw(balance, 277)
+balance = withdraw(balance, 30)
+balance = withdraw(balance, 5)
+balance = withdraw(balance, 500)
